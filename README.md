@@ -1,4 +1,5 @@
 **HireHerHands Mobile App (Version 3.2)**
+
 **Overview**
 HireHerHands is a mobile app designed to connect women skilled in manual labor (like plumbing, construction, electrical repairs, painting, etc.) with clients who need their services. It is inspired by TaskRabbit, but localized for Kenya and focused on women empowerment giving them fair job opportunities and visibility.
 
@@ -20,16 +21,18 @@ If logged in → goes to their dashboard (based on role)
 Post a new job
 View available workers
 See job history 
+
 **Worker Dashboard**
 View job requests
 Accept or reject jobs
 Manage profile and skills 
+
 **Admin Dashboard**
 View all jobs and users
 Approve new worker accounts
 See simple reports (e.g., total workers, active jobs)
 
-**Data Model (What will be stored) **
+**Data Model (What will be stored)**
 The app will store data locally using Room Database. 
 Here’s a simple explanation of what the data looks like:
 
