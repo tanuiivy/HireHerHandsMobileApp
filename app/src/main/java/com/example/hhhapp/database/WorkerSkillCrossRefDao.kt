@@ -7,7 +7,7 @@ import androidx.room.Query
 @Dao
 interface WorkerSkillCrossRefDao {
     @Insert
-    suspend fun insertCrossRef(ref: WorkerSkillCrossRef)
+    suspend fun insert(crossRef: WorkerSkillCrossRef)
 
     @Insert
     suspend fun insertAll(refs: List<WorkerSkillCrossRef>)

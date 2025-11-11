@@ -20,7 +20,23 @@ class JobViewModel(application: Application) : AndroidViewModel(application) {
     val message: LiveData<String> get() = _message
 
     //create a new job (posted by customer)
+    private val _newJobId = MutableLiveData<Long>()
+    val newJobId: LiveData<Long> get() = _newJobId
+
     fun postJob(job: Job) {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                val id = jobDao.createJob(job)
+                _newJobId.postValue(id)
+                _message.postValue("Job posted successfully!")
+            } catch (e: Exception) {
+                _message.postValue("Error: ${e.message}")
+            }
+        }
+    }
+
+
+    /*fun postJob(job: Job) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 jobDao.createJob(job)
@@ -29,7 +45,7 @@ class JobViewModel(application: Application) : AndroidViewModel(application) {
                 _message.postValue("Error: ${e.message}")
             }
         }
-    }
+    }*/
 
     //load all jobs for a specific customer
     fun getJobsByCustomer(customerId: Int) {

@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.example.hhhapp.R
 import com.example.hhhapp.database.Job
 import com.example.hhhapp.databinding.FragmentPostJobBinding
 import java.text.SimpleDateFormat
@@ -34,15 +35,35 @@ class PostJobFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //setup skill dropdown (temporary static list for now)
-        val skills = arrayOf("Select Skill", "Plumbing", "Cleaning", "Electrician", "Hairdressing")
+        val skills = arrayOf("Select Skill", "Plumbing", "Cleaning", "Electrician", "Hairdressing","Mounting","Painting")
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, skills)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerSkill.adapter = adapter
 
         //observe messages from ViewModel
+        // Observe both messages and job ID
+        jobViewModel.newJobId.observe(viewLifecycleOwner) { jobId ->
+            if (jobId != null && jobId > 0) {
+                val selectedSkillId = binding.spinnerSkill.selectedItemPosition
+                val bundle = Bundle().apply {
+                    putInt("jobId", jobId.toInt())
+                    putInt("skillId", selectedSkillId)
+                }
+
+                val fragment = MatchingWorkersFragment()
+                fragment.arguments = bundle
+
+                parentFragmentManager.beginTransaction()
+                    .replace(R.id.fragmentContainer, fragment)
+                    .addToBackStack(null)
+                    .commit()
+            }
+        }
+
         jobViewModel.message.observe(viewLifecycleOwner) { msg ->
             Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
         }
+
 
         //handle Post Job button
         binding.btnPostJob.setOnClickListener {
@@ -86,6 +107,24 @@ class PostJobFragment : Fragment() {
                 workerId = null,
                 skillId = skillId
             )
+            jobViewModel.newJobId.observe(viewLifecycleOwner) { jobId ->
+                if (jobId != null && jobId > 0) {
+                    val selectedSkillId = binding.spinnerSkill.selectedItemPosition
+                    val bundle = Bundle().apply {
+                        putInt("jobId", jobId.toInt())
+                        putInt("skillId", selectedSkillId)
+                    }
+
+                    val fragment = MatchingWorkersFragment()
+                    fragment.arguments = bundle
+
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainer, fragment)
+                        .addToBackStack(null)
+                        .commit()
+                }
+            }
+
 
             // save job using ViewModel
             jobViewModel.postJob(newJob)

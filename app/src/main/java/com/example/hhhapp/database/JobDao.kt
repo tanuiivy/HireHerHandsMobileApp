@@ -9,7 +9,7 @@ import androidx.room.Update
 interface JobDao {
 
     @Insert
-    suspend fun createJob (job: Job)
+    suspend fun createJob (job: Job): Long
 
     @Update
     suspend fun updateJob (job: Job)

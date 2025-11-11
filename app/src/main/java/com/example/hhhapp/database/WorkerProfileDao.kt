@@ -8,7 +8,7 @@ import androidx.room.Update
 @Dao
 interface WorkerProfileDao {
     @Insert
-    suspend fun insertProfile(profile: WorkerProfile)
+    suspend fun insertProfile(profile: WorkerProfile): Long
 
     @Update
     suspend fun updateProfile(profile: WorkerProfile)

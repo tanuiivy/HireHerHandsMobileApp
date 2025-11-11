@@ -7,19 +7,26 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.hhhapp.database.HireHerHandsDatabase
+import com.example.hhhapp.database.WorkerSkillCrossRef
 import com.example.hhhapp.databinding.FragmentApplyAsWorkerBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.CoroutineScope
 
 class ApplyAsWorkerFragment : Fragment() {
 
     private var _binding: FragmentApplyAsWorkerBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: ApplyAsWorkerViewModel by viewModels()
 
+    private val viewModel: ApplyAsWorkerViewModel by viewModels()
     private val PICK_IMAGE_REQUEST = 101
 
     override fun onCreateView(
@@ -35,14 +42,54 @@ class ApplyAsWorkerFragment : Fragment() {
 
         val db = HireHerHandsDatabase.getDatabase(requireContext())
 
-        // Select ID picture
+        // iD Picture Selection
         binding.btnSelectId.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = "image/*"
             startActivityForResult(intent, PICK_IMAGE_REQUEST)
         }
 
-        // Submit application
+        // skills list for RecyclerView
+        val skills = listOf(
+            1 to "Plumbing",
+            2 to "Cleaning",
+            3 to "Electrician",
+            4 to "Hairdressing",
+            5 to "Painting"
+        )
+
+        val selectedSkills = mutableSetOf<Int>()
+
+        // RecyclerView setup
+        binding.rvSkills.isNestedScrollingEnabled = false
+        binding.rvSkills.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvSkills.adapter = object : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
+            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+                val cb = CheckBox(parent.context)
+                cb.layoutParams = ViewGroup.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT
+                )
+                return object : RecyclerView.ViewHolder(cb) {}
+            }
+
+            override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+                val skill = skills[position]
+                val cb = holder.itemView as CheckBox
+                cb.text = skill.second
+                cb.isChecked = selectedSkills.contains(skill.first)
+
+                cb.setOnCheckedChangeListener { _, isChecked ->
+                    if (isChecked) selectedSkills.add(skill.first)
+                    else selectedSkills.remove(skill.first)
+                }
+            }
+
+            override fun getItemCount(): Int = skills.size
+        }
+
+        // submit Application
         binding.btnSubmitWorker.setOnClickListener {
             val bio = binding.etWorkerBio.text.toString().trim()
             val hourlyRate = binding.etHourlyRate.text.toString().toDoubleOrNull() ?: 0.0
@@ -57,11 +104,25 @@ class ApplyAsWorkerFragment : Fragment() {
                 return@setOnClickListener
             }
 
-            viewModel.submitApplication(db, userId, bio, hourlyRate, experience, location)
+            //submit to ViewModel
+            viewModel.submitApplication(
+                db,
+                userId,
+                bio,
+                hourlyRate,
+                experience,
+                location,
+                selectedSkills.toList()
+            )
         }
 
         viewModel.message.observe(viewLifecycleOwner) { msg ->
             Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
+        }
+
+        // Back button
+        binding.btnBack.setOnClickListener {
+            parentFragmentManager.popBackStack()
         }
     }
 
@@ -74,13 +135,7 @@ class ApplyAsWorkerFragment : Fragment() {
                 viewModel.idPictureUri = selectedImage
             }
         }
-        //back button to go back to dashboard
-        binding.btnBack.setOnClickListener {
-            parentFragmentManager.popBackStack()
-        }
     }
-
-
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -38,6 +38,10 @@ interface UserDao {
     @Query("UPDATE Users SET is_worker_pending = 1 WHERE user_id = :userId")
     suspend fun markWorkerApplicationPending(userId: Int)
 
+    @Query("SELECT * FROM Users WHERE user_id IN (:ids) AND user_gender = 'Female' AND is_worker_approved = 1 ")
+    suspend fun getApprovedWorkersByIds(ids: List<Int>): List<User>
+
+
     @Update
     suspend fun updateUser (user:User)
 }
