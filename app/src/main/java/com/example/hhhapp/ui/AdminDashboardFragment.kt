@@ -47,7 +47,7 @@ class AdminDashboardFragment : Fragment() {
             }*/
         binding.btnManageWorkers.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragmentContainer, AdminApproveWorkersFragment())
+                //.replace(R.id.fragmentContainer, AdminApproveWorkersFragment())
                 .addToBackStack(null)
                 .commit()
         }
