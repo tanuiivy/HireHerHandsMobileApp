@@ -58,7 +58,7 @@
                     android:textColor="@color/text_secondary"
                     android:layout_marginBottom="16dp" />
 
-                              <Button
+                <Button
                     android:id="@+id/btnManageWorkers"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"

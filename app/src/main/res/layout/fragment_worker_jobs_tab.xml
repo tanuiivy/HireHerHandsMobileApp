@@ -85,10 +85,10 @@
     <Button
         android:id="@+id/btnBack"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:text="Back"
         android:background="@drawable/button_primary"
-        android:textColor="@color/button_text"
+        android:textColor="@color/text_primary"
         android:textSize="14sp"
         android:padding="16dp" />
 

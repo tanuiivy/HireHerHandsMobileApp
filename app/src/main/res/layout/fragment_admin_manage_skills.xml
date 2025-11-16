@@ -18,12 +18,11 @@
         android:id="@+id/btnAddSkill"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:background="@drawable/button_primary"
+        android:background="@drawable/button_secondary"
         android:textColor="@color/button_text"
         android:textSize="14sp"
         android:padding="16dp"
-        android:text="Add New Skill"
-        android:backgroundTint="@color/button_text"/>
+        android:text="Add New Skill"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -39,12 +38,11 @@
 
     <Button
         android:id="@+id/btnBack"
+        android:text="Back"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:background="@drawable/button_secondary"
         android:textColor="@color/button_text"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:text="Back"/>
-
+        android:textStyle="bold"/>
 </LinearLayout>

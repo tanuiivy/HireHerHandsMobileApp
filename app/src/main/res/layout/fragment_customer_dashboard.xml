@@ -47,7 +47,6 @@
                     android:textAlignment="center"/>
             </LinearLayout>
 
-            <!-- Post Job Card (her styling) -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -128,7 +127,6 @@
                     android:textColor="@color/text_secondary"
                     android:layout_marginBottom="16dp" />
 
-                <!-- View My Jobs Button (keep your ID) -->
                 <Button
                     android:id="@+id/btnViewMyJobs"
                     android:layout_width="match_parent"
@@ -175,7 +173,6 @@
                     android:textColor="@color/text_secondary"
                     android:layout_marginBottom="16dp" />
 
-                <!-- My Profile Button -->
                 <Button
                     android:id="@+id/btnMyProfile"
                     android:layout_width="match_parent"
@@ -189,7 +186,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-            <!-- Apply as Worker Card (keep her styling) -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -214,7 +210,8 @@
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="@color/text_primary"
-                        android:layout_marginBottom="8dp" />
+                        android:layout_marginBottom="8dp"
+                        android:visibility="gone"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -222,7 +219,8 @@
                         android:text="Apply to browse available jobs and showcase your skills"
                         android:textSize="13sp"
                         android:textColor="@color/text_secondary"
-                        android:layout_marginBottom="16dp" />
+                        android:layout_marginBottom="16dp"
+                        android:visibility="gone"/>
 
                     <Button
                         android:id="@+id/btnApplyWorker"
@@ -259,7 +257,6 @@
                 android:layout_marginBottom="16dp"
                 android:visibility="gone" />
 
-            <!-- Logout Button (keep your ID, adjust height like her buttons) -->
             <Button
                 android:id="@+id/btnLogout"
                 android:layout_width="match_parent"

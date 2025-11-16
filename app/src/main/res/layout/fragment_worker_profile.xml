@@ -20,7 +20,7 @@
             android:textSize="26sp"
             android:textStyle="bold"
             android:layout_marginTop="60dp"
-            android:textColor="@color/surface"
+            android:textColor="@color/text_primary"
             android:layout_marginBottom="20dp" />
 
         <TextView
@@ -122,8 +122,8 @@
 
             <Button
                 android:id="@+id/btnEdit"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@drawable/button_primary"
                 android:textSize="14sp"
                 android:text="Edit Profile"
@@ -133,7 +133,7 @@
             <Button
                 android:id="@+id/btnDelete"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/danger_button"
                 android:textColor="@color/button_text"
                 android:textSize="14sp"

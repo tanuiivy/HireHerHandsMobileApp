@@ -64,20 +64,21 @@
                 android:layout_marginBottom="16dp" />
 
             <!-- Job Location input -->
+
+            <!-- Job Date input -->
             <EditText
                 android:id="@+id/etJobLocation"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/input_background"
                 android:hint="Job Location"
-                android:textColor="@color/text_primary"
-                android:textColorHint="@color/text_secondary"
-                android:textSize="16sp"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:background="@drawable/input_background"
-                android:layout_marginBottom="16dp" />
+                android:textColor="@color/text_primary"
+                android:textColorHint="@color/text_secondary"
+                android:textSize="16sp" />
 
-            <!-- Job Date input -->
             <EditText
                 android:id="@+id/etJobDate"
                 android:layout_width="match_parent"
@@ -125,7 +126,8 @@
                 android:background="@drawable/button_primary"
                 android:textColor="@color/button_text"
                 android:textSize="14sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:layout_marginBottom="32dp"/>
 
             <!-- Back to Dashboard button -->
             <Button
