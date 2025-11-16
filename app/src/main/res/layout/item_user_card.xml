@@ -15,34 +15,34 @@
         android:text="Name: "
         android:textStyle="bold"
         android:textSize="18sp"
-        android:textColor="#212121" />
+        android:textColor="@color/text_primary" />
 
     <TextView
         android:id="@+id/tvUserEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="8dp"
         android:text="Email: "
-        android:textSize="15sp"
-        android:textColor="#424242" />
+        android:textSize="14sp"
+        android:textColor="@color/text_secondary" />
 
     <TextView
         android:id="@+id/tvUserGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="8dp"
         android:text="Gender: "
-        android:textSize="15sp"
-        android:textColor="#424242" />
+        android:textSize="14sp"
+        android:textColor="@color/text_secondary" />
 
     <TextView
         android:id="@+id/tvUserId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="8dp"
         android:text="ID: "
         android:textSize="13sp"
-        android:textColor="#757575" />
+        android:textColor="@color/text_secondary" />
 
     <TextView
         android:id="@+id/tvUserStats"
@@ -50,8 +50,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="Jobs: "
-        android:textSize="15sp"
-        android:textColor="#2962FF"
+        android:textSize="14sp"
+        android:textColor="@color/button_text"
         android:textStyle="bold" />
 
 </LinearLayout>

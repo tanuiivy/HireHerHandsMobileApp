@@ -3,8 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@drawable/rounded_card"
+    android:padding="20dp"
+    android:background="@drawable/card_background"
     android:elevation="4dp"
     android:layout_marginBottom="16dp"
     android:layout_marginHorizontal="8dp">
@@ -16,8 +16,8 @@
         android:text="Name:"
         android:textStyle="bold"
         android:textSize="18sp"
-        android:textColor="#000000"
-        android:layout_marginBottom="6dp"/>
+        android:textColor="@color/text_primary"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
         android:id="@+id/tvUserEmail"
@@ -25,7 +25,8 @@
         android:layout_height="wrap_content"
         android:text="Email:"
         android:textSize="14sp"
-        android:layout_marginBottom="4dp"/>
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
         android:id="@+id/tvUserGender"
@@ -33,22 +34,23 @@
         android:layout_height="wrap_content"
         android:text="Gender:"
         android:textSize="14sp"
-        android:layout_marginBottom="4dp"/>
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
         android:id="@+id/tvUserId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ID:"
-        android:textSize="12sp"
-        android:textColor="#666666"
+        android:textSize="13sp"
+        android:textColor="@color/text_secondary"
         android:layout_marginBottom="12dp"/>
 
     <!-- Divider -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#DDDDDD"
+        android:background="@color/border"
         android:layout_marginVertical="12dp" />
 
     <TextView
@@ -57,7 +59,8 @@
         android:layout_height="wrap_content"
         android:text="Location:"
         android:textSize="14sp"
-        android:layout_marginBottom="4dp"/>
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
         android:id="@+id/tvWorkerRate"
@@ -65,8 +68,9 @@
         android:layout_height="wrap_content"
         android:text="Rate:"
         android:textSize="14sp"
-        android:textColor="#4CAF50"
-        android:layout_marginBottom="4dp"/>
+        android:textStyle="bold"
+        android:textColor="@color/success"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
         android:id="@+id/tvWorkerExperience"
@@ -74,7 +78,8 @@
         android:layout_height="wrap_content"
         android:text="Experience:"
         android:textSize="14sp"
-        android:layout_marginBottom="4dp"/>
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
         android:id="@+id/tvWorkerRating"
@@ -82,7 +87,7 @@
         android:layout_height="wrap_content"
         android:text="Rating:"
         android:textSize="14sp"
-        android:textColor="#FF9800"
+        android:textColor="@color/text_secondary"
         android:layout_marginBottom="8dp"/>
 
     <TextView
@@ -91,6 +96,7 @@
         android:layout_height="wrap_content"
         android:text="Jobs:"
         android:textSize="14sp"
-        android:textColor="#2196F3"
+        android:textStyle="bold"
+        android:textColor="@color/button_text"
         android:layout_marginTop="4dp"/>
 </LinearLayout>

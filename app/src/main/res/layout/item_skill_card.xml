@@ -8,7 +8,7 @@
     android:layout_marginBottom="12dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="4dp"
-    app:cardBackgroundColor="?attr/colorSurface"> <!-- Uses theme's surface color -->
+    app:cardBackgroundColor="@color/card_background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +28,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Skill Name: "
-                android:textAppearance="?attr/textAppearanceSubtitle1" /> <!-- Standard Material Typography -->
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary" />
 
             <TextView
                 android:id="@+id/tvSkillId"
@@ -36,8 +38,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="ID: "
-                android:textAppearance="?attr/textAppearanceCaption"
-                android:textColor="?attr/colorOnSurfaceVariant" /> <!-- Softer text color -->
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary" />
 
             <TextView
                 android:id="@+id/tvWorkerCount"
@@ -45,8 +47,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="Workers: "
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="?attr/colorPrimary" />
+                android:textSize="14sp"
+                android:textColor="@color/button_text" />
 
         </LinearLayout>
 
@@ -56,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Delete"
-            app:backgroundTint="?attr/colorError"/>
+            app:backgroundTint="@color/error"/>
 
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

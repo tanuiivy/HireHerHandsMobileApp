@@ -145,34 +145,33 @@
 
             <Button
                 android:id="@+id/btnSelectId"
+                android:text="Select ID from Gallery"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:text="Select ID from Gallery"
-                android:background="@drawable/button_secondary"
-                android:textColor="@color/primary"
+                android:background="@drawable/button_primary"
+                android:textColor="@color/button_text"
                 android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"/>
         </LinearLayout>
 
         <!-- Submit & Back Buttons -->
         <Button
             android:id="@+id/btnSubmitWorker"
+            android:text="Submit Application"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="Submit Application"
             android:background="@drawable/button_primary"
-            android:textColor="@android:color/white"
+            android:textColor="@color/button_text"
             android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="12dp" />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnBack"
+            android:text="Back to Dashboard"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="Back to Dashboard"
-            android:background="@drawable/button_secondary"
-            android:textColor="@color/primary"
+            android:background="@drawable/button_primary"
+            android:textColor="@color/button_text"
             android:textSize="16sp"
             android:textStyle="bold" />
     </LinearLayout>

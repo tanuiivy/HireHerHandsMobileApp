@@ -59,7 +59,7 @@
         android:text="Budget: "
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="@color/primary"
+        android:textColor="@color/button_text"
         android:layout_marginBottom="8dp"/>
 
     <TextView

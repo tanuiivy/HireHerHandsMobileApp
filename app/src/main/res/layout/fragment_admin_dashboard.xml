@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:card="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,6 +12,7 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
 
+        <!-- Welcome Text -->
         <TextView
             android:id="@+id/tvWelcome"
             android:layout_width="wrap_content"
@@ -17,20 +20,21 @@
             android:text="Welcome, Admin!"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:textColor="@color/text_primary"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="32dp"/>
 
+        <!-- Card 1: Review Applications -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
             android:layout_marginBottom="16dp"
-            android:elevation="2dp"
+            android:elevation="4dp"
             android:radius="12dp"
             card:cardBackgroundColor="@color/card_background">
 
-            <!-- Card 1 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -54,28 +58,29 @@
                     android:textColor="@color/text_secondary"
                     android:layout_marginBottom="16dp" />
 
-                <Button
+                              <Button
                     android:id="@+id/btnManageWorkers"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Review Worker Applications"
-                    android:backgroundTint="@drawable/button_primary"
-                    android:textAllCaps="false"
-                    android:textSize="16sp" />
+                    android:layout_height="48dp"
+                    android:background="@drawable/button_primary"
+                    android:textColor="@color/button_text"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:text="Review Worker Applications" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <!-- Card 2: View Jobs -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
             android:layout_marginBottom="16dp"
-            android:elevation="2dp"
+            android:elevation="4dp"
             android:radius="12dp"
             card:cardBackgroundColor="@color/card_background">
 
-            <!-- Card 2 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -99,27 +104,31 @@
                     android:textColor="@color/text_secondary"
                     android:layout_marginBottom="16dp" />
 
+                <!-- FIXED: Correct ID for Kotlin -->
                 <Button
                     android:id="@+id/btnViewJobs"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="View All Jobs"
-                    android:backgroundTint="@drawable/button_primary"
-                    android:textAllCaps="false"
-                    android:textSize="16sp" />
+                    android:layout_height="48dp"
+                    android:background="@drawable/button_primary"
+                    android:textColor="@color/button_text"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:text="View All Jobs"/>
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <!-- Card 3: View Clients -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
             android:layout_marginBottom="16dp"
-            android:elevation="2dp"
-            android:radius="12dp"
+            android:elevation="4dp"
+            card:cardCornerRadius="12dp"
             card:cardBackgroundColor="@color/card_background">
-            <!-- Card 3 -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -146,24 +155,55 @@
                 <Button
                     android:id="@+id/btnViewClients"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
+                    android:background="@drawable/button_primary"
+                    android:textColor="@color/button_text"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
                     android:text="View All Clients"
-                    android:backgroundTint="@drawable/button_primary"
-                    android:textAllCaps="false"
-                    android:textSize="16sp" />
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Manage Skills"
+                    android:textColor="@color/text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="View a list of skills entered by workers"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
+                <Button
+                    android:id="@+id/btnManageSkills"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/button_primary"
+                    android:textColor="@color/button_text"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:text="Manage Skills"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <!-- Card 4: View Workers -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
             android:layout_marginBottom="16dp"
-            android:elevation="2dp"
+            android:elevation="4dp"
             android:radius="12dp"
             card:cardBackgroundColor="@color/card_background">
-            <!-- Card 4 -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -190,56 +230,13 @@
                 <Button
                     android:id="@+id/btnViewWorkers"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:text="View All Workers"
-                    android:backgroundTint="@drawable/button_primary"
-                    android:textAllCaps="false"
-                    android:textSize="16sp" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="16dp"
-            android:elevation="2dp"
-            android:radius="12dp"
-            card:cardBackgroundColor="@color/card_background">
-
-            <!-- Card 5 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Manage Skills"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary"
-                    android:layout_marginBottom="8dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="View a list of skills entered by workers"
-                    android:textSize="13sp"
-                    android:textColor="@color/text_secondary"
-                    android:layout_marginBottom="16dp" />
-
-                <Button
-                    android:id="@+id/btnManageSkills"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Manage Skills"
                     android:background="@drawable/button_primary"
+                    android:textColor="@color/button_text"
                     android:textAllCaps="false"
                     android:textSize="16sp" />
+
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -247,12 +244,12 @@
         <Button
             android:id="@+id/btnLogout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Logout"
-            android:backgroundTint="#F44336"
-            android:padding="16dp"
-            android:textAllCaps="false"
-            android:textSize="16sp" />
+            android:layout_height="48dp"
+            android:background="@drawable/danger_button"
+            android:textColor="@color/button_text"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:text="Logout" />
 
     </LinearLayout>
 </ScrollView>

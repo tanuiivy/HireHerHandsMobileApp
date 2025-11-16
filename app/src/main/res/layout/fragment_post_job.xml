@@ -119,25 +119,24 @@
             <!-- Post Job button -->
             <Button
                 android:id="@+id/btnPostJob"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
                 android:text="Post Job"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/white"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
                 android:background="@drawable/button_primary"
-                android:layout_marginBottom="12dp" />
+                android:textColor="@color/button_text"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
 
             <!-- Back to Dashboard button -->
             <Button
                 android:id="@+id/btnBack"
+                android:text="Back to Dashboard"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:text="Back to Dashboard"
+                android:background="@drawable/button_secondary"
+                android:textColor="@color/button_text"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/primary"
-                android:background="@drawable/button_secondary" />
+                android:textStyle="bold"/>
 
         </LinearLayout>
     </ScrollView>

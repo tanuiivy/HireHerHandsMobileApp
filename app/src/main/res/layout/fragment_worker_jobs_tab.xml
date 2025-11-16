@@ -37,8 +37,10 @@
             android:layout_height="48dp"
             android:layout_weight="1"
             android:text="Pending"
+            android:background="@drawable/tab_button_background"
+            android:textColor="@color/button_text"
             android:textSize="14sp"
-            android:background="@drawable/tab_button_background" />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnAccepted"
@@ -47,8 +49,10 @@
             android:layout_weight="1"
             android:layout_marginStart="8dp"
             android:text="Active"
+            android:background="@drawable/tab_button_background"
+            android:textColor="@color/button_text"
             android:textSize="14sp"
-            android:background="@drawable/tab_button_background" />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnCompleted"
@@ -57,8 +61,10 @@
             android:layout_weight="1"
             android:layout_marginStart="8dp"
             android:text="Complete"
+            android:background="@drawable/tab_button_background"
+            android:textColor="@color/button_text"
             android:textSize="14sp"
-            android:background="@drawable/tab_button_background" />
+            android:textStyle="bold" />
     </LinearLayout>
 
     <!-- Jobs Container -->
@@ -81,7 +87,9 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:text="Back"
-        android:background="@drawable/rounded_grey_button"
-        android:layout_marginTop="16dp" />
+        android:background="@drawable/button_primary"
+        android:textColor="@color/button_text"
+        android:textSize="14sp"
+        android:padding="16dp" />
 
 </LinearLayout>
